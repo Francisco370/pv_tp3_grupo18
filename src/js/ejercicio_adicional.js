@@ -1,6 +1,7 @@
 import { mostrarConForEach } from "./utilArray.js";
 import { filtrarPorPrecio } from "./utilArray.js";
 import { modificarPrecio } from "./utilArray.js";
+import { ordenarPorPrecio } from "./utilArray.js";
 
 const productos = [
     {
@@ -41,3 +42,6 @@ const productos = [
 
 //mostrar los productos con incremento en el precio
 modificarPrecio(productos);
+
+//mostrar los productos ordenados por precio (menor a mayor)
+ordenarPorPrecio(productos);
