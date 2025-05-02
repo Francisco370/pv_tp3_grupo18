@@ -21,3 +21,12 @@ export const modificarPrecio = (productos) => {
     }));
     console.log(productosConPreciosModificados);
 }
+
+//ordenar el array de producos por precio de menor a mayor
+export const ordenarPorPrecio = (productos) => {
+    productos.sort((a, b) => a.precio - b.precio);
+    console.log("Productos ordenados por precio (menor a mayor): ");
+    productos.forEach(({descripcion, precio}) => {
+        console.log(`Descripcion: ${descripcion}, precio: ${precio}`);
+    });
+}
