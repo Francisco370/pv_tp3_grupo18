@@ -1,21 +1,23 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
-const TaskInput = ({ guardar }) => {
-    const [tarea, setTarea] = useState("");
+const TaskInput = ({ addTask }) => {
+    const [input, setInput] = useState("");
 
-    const manejarEnvio = () => {
-        guardar(tarea);
-        setTarea('');
+    const handleSubmit = (e) => {
+        e.preventDeFault();
+        if(input.trim() !== ''){
+            addTask(input);
+            setInput('');
+        }
     };
 
-    return (
-        <div>
-            <label htmlFor=''>Ingresar tarea</label>
-            <input type="text" value={tarea} onChange={(e) => setTarea(e.target.value)}/>
-            <button onClick={manejarEnvio}>Enviar</button>
-        </div>
+    return(
+        <form onSubmit={handleSubmit}>
+            <input type="text" placeholder='Nueva tarea' value={input} onChange={(e) => setInput(e.target.value)}/>
+            <button type='submit'>Agregar</button>
+        </form>
     );
-};
+}
 
 export default TaskInput;
 
