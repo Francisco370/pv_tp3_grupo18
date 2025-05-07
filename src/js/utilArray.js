@@ -30,3 +30,9 @@ export const ordenarPorPrecio = (productos) => {
         console.log(`Descripcion: ${descripcion}, precio: ${precio}`);
     });
 }
+//agregar un nuevo producto al final del array xD
+export const agregarProducto = (productos, nuevoProducto) => {
+    productos.push(nuevoProducto);
+    console.log("Producto agregado exitosamente.");
+    console.log(productos);
+};
