@@ -1,21 +1,26 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
-const TaskInput = ({ addTask }) => {
-    const [input, setInput] = useState("");
+const TaskInput = ({ guardar }) => {
+  const [texto, setTexto] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDeFault();
-        if(input.trim() !== ''){
-            addTask(input);
-            setInput('');
-        }
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (texto.trim() !== '') {
+      guardar(texto);
+      setTexto('');
+    }
+  };
 
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder='Nueva tarea' value={input} onChange={(e) => setInput(e.target.value)}/>
-            <button type='submit'>Agregar</button>
-        </form>
+      <input
+        type="text"
+        value={texto}
+        onChange={(e) => setTexto(e.target.value)}
+        placeholder="Agregar tarea..."
+      />
+      <button type="submit">Agregar</button>
+    </form>
     );
 }
 
