@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 
-const TaskInput = ({ guardar }) => {
+const TaskInput = ({ addTask }) => {
   const [texto, setTexto] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (texto.trim() !== '') {
-      guardar(texto);
+      addTask(texto);
       setTexto('');
     }
   };
