@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TaskInput from './TaskInput';
 import TaskItem from './TaskItem';
+import '../css/lista.css';
 
 const TaskList = ({task,toggleTask,deleteTask}) => {
     return(
