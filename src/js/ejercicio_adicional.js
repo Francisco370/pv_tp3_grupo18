@@ -3,6 +3,7 @@ import { filtrarPorPrecio } from "./utilArray.js";
 import { modificarPrecio } from "./utilArray.js";
 import { ordenarPorPrecio } from "./utilArray.js";
 import { agregarProducto } from "./utilArray.js";
+import { eliminarProductoMasBarato } from "./utilArray.js"
 
 const productos = [
     {
@@ -47,9 +48,14 @@ const productoNuevo = {
 //filtrarPorPrecio(productos);
 
 //mostrar los productos con incremento en el precio
-modificarPrecio(productos);
+//modificarPrecio(productos);
 
 //mostrar los productos ordenados por precio (menor a mayor)
-ordenarPorPrecio(productos);
+//ordenarPorPrecio(productos);
+
 //agrego nuevo producto
-agregarProducto(productos, productoNuevo);
+//agregarProducto(productos, productoNuevo);
+
+//eliminar producto mas barato
+eliminarProductoMasBarato(productos);
+console.log("Array después de eliminar el producto más barato:", productos);

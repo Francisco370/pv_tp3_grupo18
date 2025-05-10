@@ -36,3 +36,15 @@ export const agregarProducto = (productos, nuevoProducto) => {
     console.log("Producto agregado exitosamente.");
     console.log(productos);
 };
+// Función para eliminar el producto con el precio más bajo (modifica el array original)
+export const eliminarProductoMasBarato = (productos) => {
+    const productoConPrecioMinimo = productos.reduce(
+        (min, producto) => (producto.precio < min.precio ? producto : min),
+        productos[0]
+    );
+    const index = productos.indexOf(productoConPrecioMinimo);
+    if (index !== -1) {
+        productos.splice(index, 1); // Modifica el array original eliminando el elemento
+        console.log("Producto con el precio más bajo eliminado.");
+    }
+};
